@@ -1,0 +1,58 @@
+﻿<Window x:Class="ChessApp.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChessApp.Windows"
+        mc:Ignorable="d"
+        Closing="WindowClosing"
+        Title="Chess Game" Height="600" Width="1000" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" Grid.ColumnSpan="7">
+            <MenuItem Header="Game">
+                <MenuItem Header="New" Click="NewGame"/>
+            </MenuItem>
+            <MenuItem Header="Register" Click="RegisterUser"/>
+            <MenuItem Header="Login">
+                <MenuItem Header="Login as White" Click="LoginAsWhite"/>
+                <MenuItem Header="Login as Black" Click="LoginAsBlack"/>
+            </MenuItem>
+        </Menu>
+        <UniformGrid Name="rows" Grid.Column="2" Grid.Row="2" Grid.RowSpan="7" Columns="1" Rows="8"/>
+        <UniformGrid Name="rows2" Grid.Column="4" Grid.Row="2" Grid.RowSpan="7" Columns="1" Rows="8"/>
+        <UniformGrid Name="columns" Grid.Column="3" Grid.Row="9" Columns="8" Rows="1"/>
+        <UniformGrid Name="columns2" Grid.Column="3" Grid.Row="1" Columns="8" Rows="1"/>
+        <UniformGrid Name="board" Grid.Column="3" Grid.Row="2" Grid.RowSpan="7" Columns="8" Rows="8"/>
+        <Button Name="drawButton" Grid.Column="5" Grid.Row="4" Content="Offer a draw" Click="OfferDraw" FontSize="16"/>
+        <Button Name="resignButton" Grid.Column="5" Grid.Row="6" Content="Resign" Click="Resign" FontSize="16"/>
+        <TextBlock Name="blackTimer" Grid.Column="5" Grid.Row="2" Text="Black Timer here" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Name="whiteTimer" Grid.Column="1" Grid.Row="8" Text="White Timer here" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Name="blackPlayerInfo" Grid.Column="1" Grid.Row="2" Text="Black Player Info here" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Name="whitePlayerInfo" Grid.Column="5" Grid.Row="8" Text="White Player Info here" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <StatusBar Name="gameState" Grid.Row="10" Grid.ColumnSpan="7">
+            <TextBlock Name="stateText"/>
+        </StatusBar>
+    </Grid>
+</Window>

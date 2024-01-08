@@ -1,0 +1,35 @@
+﻿<Window x:Class="ChessApp.Windows.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChessApp.Windows"
+        mc:Ignorable="d"
+        Title="Registration Form" ResizeMode="NoResize" Height="150" Width="300" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Insert new player username and password"/>
+        <Label Grid.Row="1" Grid.Column="1" Content="Username" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" Name="usernameText"/>
+        <Label Grid.Row="3" Grid.Column="1" Content="Password" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <PasswordBox Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" Name="passwordText"/>
+        <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1" Content="Close" Click="CloseWindow"/>
+        <Button Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="1" Content="Register" Click="RegisterUser"/>
+    </Grid>
+</Window>
